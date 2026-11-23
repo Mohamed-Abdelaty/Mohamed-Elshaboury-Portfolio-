@@ -1,0 +1,10 @@
+import fs from 'node:fs/promises';
+import sharp from 'sharp';
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><defs><linearGradient id="accent"><stop stop-color="#a8a0ff"/><stop offset="1" stop-color="#65d2e4"/></linearGradient><radialGradient id="glow"><stop stop-color="#6366f1" stop-opacity=".15"/><stop offset="1" stop-color="#070b14" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="630" fill="#070b14"/><ellipse cx="890" cy="320" rx="380" ry="320" fill="url(#glow)"/><path d="M70 112h1060M70 534h1060" stroke="#263249"/><rect x="70" y="49" width="38" height="38" rx="8" fill="#171c34" stroke="#6366f177"/><text x="77" y="75" font-family="Arial" font-size="20" font-weight="bold" fill="#bbb4ff">ME</text><text x="125" y="76" font-family="Arial" font-size="22" fill="#e2e8f0">Mohamed Elshaboury</text><text x="65" y="237" font-family="Arial" font-size="64" font-weight="bold" letter-spacing="-3" fill="#f8fafc">From interface</text><text x="65" y="323" font-family="Arial" font-size="64" font-weight="bold" letter-spacing="-3" fill="url(#accent)">to infrastructure.</text><text x="70" y="411" font-family="Arial" font-size="21" fill="#94a3b8">Full-Stack Developer / Big Data Engineer</text><text x="70" y="449" font-family="Arial" font-size="20" fill="#94a3b8">UI/UX Designer</text><text x="70" y="579" font-family="Arial" font-size="17" fill="#94a3b8">Four engineering case studies. 37 project views.</text></svg>`;
+const layers = [];
+for (const [index,slug] of ['careflow','events','timetable'].entries()) {
+  const image = await fs.readFile(`public/images/projects/${slug}/01-thumb.webp`);
+  const panel = await sharp({create:{width:310,height:142,channels:4,background:'#101724'}}).composite([{input:await sharp(image).resize({width:290,height:122,fit:'contain',background:'#101724'}).png().toBuffer(),left:10,top:10}]).png().toBuffer();
+  layers.push({input:panel,left:810 + (index === 1 ? -24 : 0),top:76 + index * 155});
+}
+await sharp(Buffer.from(svg)).composite(layers).png().toFile('public/social-preview.png');

@@ -1,29 +1,35 @@
 {
-    "name": "elshaboury-portfolio",
-    "private": true,
-    "version": "1.0.0",
-    "type": "module",
-    "scripts": {
-        "dev": "vite --host 127.0.0.1",
-        "build": "tsc -b && vite build",
-        "typecheck": "tsc -b",
-        "lint": "eslint .",
-        "test": "node --test tests/*.test.mjs",
-        "preview": "vite preview --host 127.0.0.1"
-    },
-    "dependencies": {
-        "react": "^19.2.0",
-        "react-dom": "^19.2.0"
-    },
-    "devDependencies": {
-        "@eslint/js": "^9.39.0",
-        "@types/react": "^19.2.0",
-        "@types/react-dom": "^19.2.0",
-        "@vitejs/plugin-react": "^5.1.0",
-        "eslint": "^9.39.0",
-        "sharp": "^0.35.5",
-        "typescript": "~5.9.3",
-        "typescript-eslint": "^8.46.0",
-        "vite": "^7.2.0"
-    }
+  "name": "elshaboury-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b",
+    "lint": "eslint .",
+    "test": "node --test tests/*.test.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "format": "prettier --write src tests index.html",
+    "format:check": "prettier --check src tests index.html"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/outfit": "^5.3.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.0",
+    "@vitejs/plugin-react": "^5.1.0",
+    "eslint": "^9.39.0",
+    "happy-dom": "^21.0.1",
+    "prettier": "^3.9.10",
+    "sharp": "^0.35.5",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.0",
+    "vite": "^7.2.0"
+  }
 }

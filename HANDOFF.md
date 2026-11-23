@@ -1,58 +1,49 @@
-# Implementation handoff
+# Portfolio handoff
+
+Updated November 24, 2026. This document describes the current individual design, full galleries and scroll repair; it replaces historical iteration notes.
 
 ## Delivered
 
-Single-page React / TypeScript / Vite portfolio: sticky active navigation and mobile menu; hero and documented credibility strip; four featured projects with native accessible case-study dialogs and image enlargement; about; six skill groups; four accurately distinguished experience entries; E-JUST education; four text-only training credentials; community recognition; language levels; exact owner contact channels; current-year footer. Local favicon, generated 1200Ã—630 social graphic, descriptive SEO and robots file are included. No backend, external fonts or runtime service dependencies.
+A static React / TypeScript / Vite portfolio with all nine requested content areas, the owner's four featured projects, seven training entries, six expandable skill groups, accurate recognition and language levels. The full legal name is Mohamed Abdelaty Mohamed Elshaboury; the public wordmark is Mohamed Elshaboury.
 
-## Evidence inventory
+The current version follows the owner's latest request for an individual visual identity. It uses a work-led hero with four selectable previews, a compact ME navigation, a balanced two-column project grid, left-aligned section headings and experience cards. The earlier authorized-reference investigation remains recorded in `REFERENCE_REDESIGN.md` as historical implementation evidence.
+
+All 37 supplied project images are available through per-project galleries. Captions distinguish interface views, heuristic examples, architecture illustration and simulated/seed states. Sensitive fields are obscured in public derivatives; original inputs remain unchanged. The old four preview pairs remain available as reviewed assets.
+
+The mouse-wheel defect was reproduced over the old non-scrolling image container: `overscroll-behavior: contain` absorbed wheel movement while the enclosing case study remained at scrollTop 0. The case study now has one explicit scroll viewport containing its header, gallery and text. Full-size image panning uses a separate native dialog. See [GALLERY_AND_IDENTITY.md](GALLERY_AND_IDENTITY.md).
+
+## Evidence and public treatment
 
 | Content | Source | Treatment |
 | --- | --- | --- |
-| Identity, skills, counts, experience, education | `../PORTFOLIO_CONTENT.md` | Approved copy condensed without changing claims. Academic work explicitly labeled. |
-| CareFlow IDS | Private `CareFlow-IDS.txt` and supplied dashboard | Kafka/Spark/HDFS pipeline; leakage remediation; held-out evaluation context; raw ingestion count. Dashboard and dossier clean-count discrepancy disclosed. |
-| Elshaboury Events | Private `Elshaboury-Events-Platform.txt` and supplied home image | Venue escrow, scoped access, QR ticketing, Express/MySQL/Flask architecture. Feature-vector descriptions kept distinct. No claimed prediction accuracy. |
-| CSIT Timetable Engine | Private `CSIT Timetable.txt` and supplied overview image | MRV, forward checking, cohort decomposition, documented 1.47s run. Zero-conflict claim explicitly restricted to intra-cohort checks. |
-| CarAgencies | Private `Car-Rental.txt` and supplied screenshot | ASP.NET Core, EF Core, Identity, ownership checks and rental state. Public screenshot derivative hides account/contact details; seed amounts not presented as revenue. |
-| Training | Approved content and supplied private certificates | Text-only cards; no original documents published. 97% is a training score. |
-| Recognition | Approved copy and source credentials | NASA hackathon participation and independently organized TEDx event contribution. |
+| Identity, skills, counts, education and experience | `../PORTFOLIO_CONTENT.md`, existing application and supplied CV | Approved facts retained. Academic work and training are distinguished from employment. The latest owner-supplied full name and contacts take precedence. |
+| CareFlow IDS | Private project dossier and supplied dashboard | Raw and cleaned flow counts retain their dataset context. Dashboard/dossier snapshot discrepancy is disclosed. Held-out F1 is an evaluation result, not a production guarantee. Heuristic scoring and microbatch ML are distinguished. |
+| Elshaboury Events | Private project dossier and supplied interface | Endpoint, table and page counts preserved. The broader feature assembly and primary model vector are distinguished. Seed accounts are simulated; no unsupported prediction accuracy is claimed. |
+| CSIT Timetable Engine | Private project dossier and supplied overview | MRV, forward checking and documented scheduling run preserved. Zero-conflict claim is explicitly intra-cohort; global cross-cohort conflict freedom is not established. |
+| CarAgencies | Private project dossier and supplied screenshot | ASP.NET Core, EF Core, Identity and rental workflows retained. Reviewed screenshot derivative hides account/contact details. Seed amounts are not revenue. |
+| Training | Approved content, supplied private credentials and CV | Seven text entries. Four have supplied training certificates; other entries are labeled CV-listed where applicable. 97% is an NTI training score. Original documents are not public. |
+| Recognition | Approved copy and supplied credentials/CV | NASA participation, independently organized TEDx contribution and CV-listed ISEIC Creative Award. No winner or employment claims are inferred. |
 
-Repository URLs for all four projects and the owner GitHub profile returned successfully during web verification on November 23, 2026. LinkedIn rejected automated access (999); its exact owner-confirmed URL is retained, with manual release verification outstanding. Udemy's owner-supplied verification link could not be fetched; no unverified verification button is rendered. Email is the exact supplied mailto address; delivery was not tested by sending mail.
+The original CV and supplied credential PDFs were rendered privately and visually reviewed. The Big Data certificate's hidden text layer has an incorrect date; its visible date agrees with September 3 in the approved content. Public dates follow the confirmed visible information. Source originals were not altered.
 
-## Optional items / release follow-up
+All four existing project repository URLs and the owner GitHub profile were previously verified during this work. LinkedIn rejected automated fetching; the exact owner-supplied URL is retained. Email is a functional mailto link; no test email was sent. An inaccessible Udemy verification URL is omitted rather than represented as verified.
 
-- No approved public-safe rÃ©sumÃ© PDF was supplied. The download CTA is omitted.
-- No operational live demo URLs were supplied. No demo buttons are shown.
-- No deployed domain is known. Add the actual canonical and absolute social-preview URL after a domain is assigned; test social sharing against that URL.
-- No profile photo was supplied. The hero uses an authored CSS illustration.
-- No dedicated ChaosFlow dossier was supplied; it appears only as academic experience, without a fabricated fifth case study.
-- Some supplied assets have image-generation-style filenames. Those ambiguous files were excluded; only reviewed, clearly named project images are used. Their images serve as supplied interface previews, not independent runtime or performance evidence.
-- Original CVs and credentials remain private. This implementation makes no claim that those originals are redacted.
+## Privacy and assets
 
-## Deployment
+Only the reviewed WebP project derivatives/thumbnails, authored favicon/social graphic and font licenses are public. Private originals and QA captures remain outside public output and ignored by Git. Reference identity, photographs, projects, contacts and credential scans were not copied into the application or public assets.
 
-No repository push, upload, registration or deployment was performed. See `README.md` for exact Vercel settings: Vite, `npm ci`, `npm run build`, `dist`, no environment variables, no rewrites. Publish only the reviewed `website/` source tree. Review the supplied deployment guide for the hosting plan's personal/commercial-use distinction.
+The hero uses the owner's actual project media. No portrait photograph or reference identity asset is used. Credential preview graphics are intentional text summaries, not fabricated certificate scans. Inter and Outfit are self-hosted; their SIL Open Font Licenses are included under `public/licenses/`.
 
 ## Validation
 
-- `npm run build`: passed; Vite generated `dist/` with 29 transformed modules. Main JS is approximately 244 KB / 76.5 KB gzip; CSS approximately 15.7 KB / 4.3 KB gzip.
-- `npm run typecheck`: passed.
-- `npm run lint`: passed.
-- `npm test`: all four integrity checks passed. These check supplied links, evaluation caveats, basic accessibility structure and private-file exclusion; they are not browser interaction tests.
-- `npm audit`: zero reported vulnerabilities, including development dependencies, after updating Sharp to 0.35.5.
-- Local Vite development preview: HTTP 200.
-- Production preview: all 14 output files returned HTTP 200 with matching byte sizes.
-- Public output reviewed: four optimized previews at two resolutions, authored social PNG, favicon, robots, HTML and compiled JS/CSS. No original PDFs, student identifiers, private text, source-material paths or source maps. The CarAgencies public derivative was visually inspected after masking. Sharp strips source metadata by default.
-- CV and all supplied credential PDFs were rendered locally and visually reviewed; TEDx JPEG reviewed. PDF text extraction has an incorrect hidden date layer in the Big Data certificate; the visible date agrees with the approved copy (September 3). Public copy uses month-level dates. No source originals were changed or published.
-- The website now has a dedicated Git repository connected to the owner-supplied GitHub repository. The initial remote history contained only README.md. The upload repair prepares all reviewed website files in a local commit. Private source material remains outside this repository; dependencies, Python environment, QA files, build output and environment files are ignored.
-- **Unverified:** actual phone/tablet/desktop rendering, browser console, keyboard traversal, active navigation and dialog/image interactions. The connected computer-use tool returned no browsers and no native apps. CSS includes 320px/mobile/tablet/desktop rules and native dialog semantics, but these have not been validated in a rendered browser. Complete this manual release check before publishing.
+TypeScript, ESLint, production build, formatting checks and all 14 automated tests pass. Real-Chrome browser checks cover desktop, tablet and mobile, project galleries/details, keyboard focus, Escape, image enlargement, themes, mobile navigation, loaded images and page overflow. Additional widths and reduced-motion behavior are covered in the redesign report.
 
-### Manual browser release check
+The Docker preview serves the compiled static site at **http://localhost:8080/**. See the README for exact rebuild and stop commands. Local browser QA is not a claim of physical-device or universal browser testing.
 
-1. Run `npm run dev`, inspect at 320px, 768px and 1440px, and confirm no horizontal page overflow or clipped controls.
-2. Tab through navigation and all project controls; open each case study, enlarge/reduce its image, press Escape, and confirm focus returns to the trigger. Confirm menu opening/closing, section offsets and active states.
-3. Check the browser console and network panel, reduced-motion mode, exact email/GitHub/LinkedIn links, and the actual production social preview after setting the domain.
+## Release state and follow-up
 
+The current redesign is local. No remote push or public hosting deployment was performed. Existing Git history and the owner-supplied remote are preserved.
 
-## Git upload repair
+There is no approved public résumé, supplied live demo, complete Arabic translation or contact-form delivery backend. Their corresponding controls are omitted or replaced with functional direct-contact actions. No additional degree or fifth featured project is invented; ChaosFlow is identified as academic work.
 
-The README was rewritten as valid UTF-8 Markdown after mixed UTF-8/UTF-16 content introduced NUL bytes. All website source files and reviewed public assets are included in the repair commit. This repository's Vercel root is ./ because package.json is at the repository root. A GitHub repository page shows documentation; the website runs locally through Vite or on a hosting deployment.
+No deployed domain is assigned. Set a verified canonical and absolute social-image URL after deployment, then check the resulting public URL and social sharing. Vercel uses Vite, root `./`, install `npm ci`, build `npm run build`, output `dist`, no environment variables and no anchor-route rewrites. Deployment remains subject to the owner's explicit instruction.

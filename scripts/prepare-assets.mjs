@@ -11,6 +11,6 @@ for(const [name,file] of Object.entries(sources)){
  await sharp(input).resize({width:1200,withoutEnlargement:true}).webp({quality:86}).toFile(`public/images/${name}.webp`);
  await sharp(input).resize({width:1920,withoutEnlargement:true}).webp({quality:93}).toFile(`public/images/${name}-large.webp`);
 }
-const svg=`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg"><rect width="1200" height="630" fill="#172bdf"/><text x="80" y="110" fill="#cbd1ff" font-family="Arial" font-size="22">MOHAMED ELSHABOURY · SOFTWARE ENGINEER</text><text x="80" y="260" fill="white" font-family="Arial" font-size="76">Powerful engineering.</text><text x="80" y="355" fill="white" font-family="Arial" font-size="76">Thoughtful experiences.</text><text x="80" y="530" fill="#cbd1ff" font-family="Arial" font-size="26">Full-stack development / Data engineering</text></svg>`;
-await sharp(Buffer.from(svg)).png().toFile('public/social-preview.png');
+await import('./prepare-project-gallery.mjs');
+await import('./create-social-preview.mjs');
 await fs.writeFile('qa/asset-inventory.json',JSON.stringify(sources,null,2));
